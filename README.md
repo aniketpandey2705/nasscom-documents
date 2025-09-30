@@ -280,14 +280,14 @@ Reference: {reference_number}. A replacement will arrive in 7 business days.
 graph TD
     A[Start] --> B[Intent Detection: card_block]
     B --> C{Check Entity: card_type}
-    C -->|Missing| D[Ask: "Which card - debit or credit?"]
+    C --> D[Ask: "Which card - debit or credit?"]
     D --> E[Received: "Debit card"]
     E --> F[Store: card_type = "debit"]
     F --> G{Check Entity: last4}
-    G -->|Missing| H[Ask: "Please provide last 4 digits"]
+    G --> H[Ask: "Please provide last 4 digits"]
     H --> I[Received: "9012"]
     I --> J{Validate: 4 digits}
-    J -->|Valid| K[Store: last4 = "9012"]
+    J --> K[Store: last4 = "9012"]
     K --> L[Confirmation Node: High Risk]
     L --> M[Ask: "Block debit ending 9012. Cannot be undone. Proceed?"]
     M --> N[User says "Yes"]
