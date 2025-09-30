@@ -43,8 +43,8 @@ Banks receive thousands of daily customer inquiries for routine tasks like balan
 
 ```mermaid
 graph TB
-    A[Voice (IVR)] --> C[Intent Detection]
-    B[Chat (Web)] --> C[Intent Detection]
+    A[Voice - IVR] --> C[Intent Detection]
+    B[Chat - Web] --> C[Intent Detection]
     
     C --> D[Visual Flow Builder]
     D --> E[Context Manager]
@@ -54,41 +54,41 @@ graph TB
     H --> I[Escalation Module]
     
     subgraph "NLU & Intent Detection"
-        C[Intent Detection]
+        C
         J[Entity Extraction]
         K[Language Detection]
         L[Confidence Scoring]
     end
     
     subgraph "Visual Flow Builder"
-        D[13 Intent Flows]
+        D
         M[Entity Collection]
         N[Conditional Branching]
         O[Confirmation Loops]
     end
     
     subgraph "Context & Session Manager"
-        E[Session Storage]
+        E
         P[Entity Memory]
         Q[Conversation History]
         R[Language Preference]
     end
     
     subgraph "Response Generation & Formatting"
-        F[Template Engine]
+        F
         S[Channel Adaptation]
         T[Bilingual Templates]
     end
     
     subgraph "Data Store & APIs"
-        G[Mock Data Storage]
-        H[API Integration]
+        G
+        H
         U[Retry Logic]
         V[Error Handling]
     end
     
     subgraph "Escalation Module"
-        I[Trigger Detection]
+        I
         W[Handoff Summary]
         X[Agent Routing]
     end
@@ -558,5 +558,6 @@ In Inya.ai platform, verify:
 [🔗 Back to Top](#-inbound-banking-support-agent)
 
 </div>
+
 
 
