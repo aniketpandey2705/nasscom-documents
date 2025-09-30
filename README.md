@@ -43,60 +43,55 @@ Banks receive thousands of daily customer inquiries for routine tasks like balan
 
 ```mermaid
 graph TB
-    subgraph "USER INTERACTION CHANNELS"
-        A[Voice (IVR)]
-        B[Chat (Web)]
+    A[Voice (IVR)] --> C[Intent Detection]
+    B[Chat (Web)] --> C[Intent Detection]
+    
+    C --> D[Visual Flow Builder]
+    D --> E[Context Manager]
+    E --> F[Response Generator]
+    F --> G[Data Store]
+    G --> H[API Integration]
+    H --> I[Escalation Module]
+    
+    subgraph "NLU & Intent Detection"
+        C[Intent Detection]
+        J[Entity Extraction]
+        K[Language Detection]
+        L[Confidence Scoring]
     end
     
-    subgraph "INYA.AI PLATFORM"
-        subgraph "NLU & Intent Detection"
-            C[Intent Classification<br/>13 intents]
-            D[Entity Extraction<br/>15+ entity types]
-            E[Language Detection<br/>EN/HI/Mixed]
-            F[Confidence Scoring]
-        end
-        
-        subgraph "Visual Flow Builder"
-            G[13 Intent Flows<br/>drag & drop]
-            H[Entity Collection Nodes]
-            I[Conditional Branching]
-            J[Confirmation Loops]
-        end
-        
-        subgraph "Context & Session Manager"
-            K[Session State Storage]
-            L[Entity Memory<br/>cross-turn]
-            M[Conversation History]
-            N[Language Preference Tracking]
-        end
-        
-        subgraph "Response Generation & Formatting"
-            O[Template Engine]
-            P[Channel Adaptation<br/>Voice/Chat]
-            Q[Bilingual Response Templates]
-        end
-        
-        subgraph "Data Store & APIs"
-            R[Built-in Mock Data Storage]
-            S[API Integration Module]
-            T[Retry Logic & Error Handling]
-        end
-        
-        subgraph "Escalation Module"
-            U[Trigger Detection]
-            V[Handoff Summary Generation]
-            W[Agent Routing]
-        end
+    subgraph "Visual Flow Builder"
+        D[13 Intent Flows]
+        M[Entity Collection]
+        N[Conditional Branching]
+        O[Confirmation Loops]
     end
     
-    A --> C
-    B --> C
-    C --> G
-    G --> K
-    K --> O
-    O --> R
-    R --> S
-    S --> U
+    subgraph "Context & Session Manager"
+        E[Session Storage]
+        P[Entity Memory]
+        Q[Conversation History]
+        R[Language Preference]
+    end
+    
+    subgraph "Response Generation & Formatting"
+        F[Template Engine]
+        S[Channel Adaptation]
+        T[Bilingual Templates]
+    end
+    
+    subgraph "Data Store & APIs"
+        G[Mock Data Storage]
+        H[API Integration]
+        U[Retry Logic]
+        V[Error Handling]
+    end
+    
+    subgraph "Escalation Module"
+        I[Trigger Detection]
+        W[Handoff Summary]
+        X[Agent Routing]
+    end
 ```
 
 ### Inya.ai Platform Components Used
